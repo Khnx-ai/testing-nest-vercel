@@ -7,6 +7,11 @@ export class AppController {
     return 'Hello, World!';
   }
 
+  @Get(':name')
+  getHelloToName(@Param('name') name: string): string {
+    return `Hello, ${name}!`;
+  }
+
   @Post()
   createHello(@Body() data: any): string {
     return `Data received: ${JSON.stringify(data)}`;
